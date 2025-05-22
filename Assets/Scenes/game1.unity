@@ -466,7 +466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _groundBase: {fileID: 5731044255739609993}
   _groundH: 0
-  _distance: 0
+  _distance: 5
 --- !u!1 &1360376600
 GameObject:
   m_ObjectHideFlags: 0

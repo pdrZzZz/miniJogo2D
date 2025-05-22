@@ -18,7 +18,7 @@ public class GameControl : MonoBehaviour
         GameObject bullet = GroundPool._groundPool.GetPooledObject();
         if (bullet != null)
         {
-            bullet.transform.position = new Vector2(bullet.transform.position.x, _groundH * _distance);
+            bullet.transform.position = new Vector2(bullet.transform.position.x, _groundH + _distance);
             //bullet.transform.rotation = turret.transform.rotation;
             bullet.SetActive(true);
         }
