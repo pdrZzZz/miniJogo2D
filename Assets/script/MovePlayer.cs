@@ -13,6 +13,9 @@ public class MovePlayer : MonoBehaviour
 
     [SerializeField] bool _checkGround;
 
+    [SerializeField] int _numbSort;
+
+
 
     void Start()
 
@@ -44,8 +47,19 @@ public class MovePlayer : MonoBehaviour
     {
         if (collision.CompareTag("ground"))
         {
-            Jump();
-            _checkGround = true;
+            if (collision.GetComponent<GroundJumpControl>())
+            {
+                GroundJumpControl groundJump = collision.gameObject.GetComponent<GroundJumpControl>();
+
+                if (groundJump._numbCor == _numbSort || groundJump._numbCor == 0)
+                {
+                    Jump();
+                    _checkGround = true;
+
+                    _numbSort = Random.Range(1, 5);
+                }
+            }
+           
         }
     }
 
